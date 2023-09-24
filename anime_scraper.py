@@ -38,9 +38,9 @@ new_headlines = [headline for headline in df['Headline'].tolist() if headline no
 
 # If there are new headlines, send an email
 if new_headlines:
-    yag = yagmail.SMTP(EMAIL, PASSWORD)
+    yag = yagmail.SMTP(email, password)
     yag.send(
-        to=email
+        to=email,
         subject='New Anime Headlines',
         contents='\n'.join(new_headlines)
     )
